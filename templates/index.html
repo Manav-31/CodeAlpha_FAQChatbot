@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Ashwood Admissions · Help desk</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1 class="wordmark">ashwood<span>.</span></h1>
+        <span class="tagline">Admissions help desk</span>
+      </div>
+      <button id="new-chat" class="text-btn" type="button">New chat</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="topics" aria-label="Browse questions">
+      <h2>Browse questions</h2>
+      {% for category, questions in categories.items() %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ category }}</summary>
+        <ul>
+          {% for question in questions %}
+          <li><button class="topic-question" type="button" data-question="{{ question }}">{{ question }}</button></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endfor %}
+    </aside>
+
+    <section class="chat" aria-label="Chat">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <form id="chat-form" class="composer">
+        <input id="message-input" type="text" maxlength="300" autocomplete="off"
+               placeholder="Ask about admissions, fees, hostel..." aria-label="Your question" autofocus>
+        <button id="send-btn" class="send-btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script id="bot-data" type="application/json">{{ {"college": college, "popular": popular}|tojson }}</script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

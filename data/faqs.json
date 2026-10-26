@@ -1,0 +1,283 @@
+{
+  "college": "Ashwood College",
+  "popular": [
+    "How do I apply for admission?",
+    "What is the fee for B.Tech?",
+    "Is hostel available?",
+    "What is the last date to apply?"
+  ],
+  "faqs": [
+    {
+      "category": "Applying",
+      "question": "How do I apply for admission?",
+      "variants": ["What is the admission process?", "How can I get admission?", "What are the steps to apply?", "Where do I fill the application form?", "How can I apply?"],
+      "answer": "Apply online on the admissions portal:\n1. Register with your email and phone number.\n2. Fill in the application form.\n3. Upload your documents.\n4. Pay the ₹1,000 application fee.\nYour application number is emailed to you straight away."
+    },
+    {
+      "category": "Applying",
+      "question": "Is there an application fee?",
+      "variants": ["How much is the application fee?", "How much does the application form cost?", "Do I have to pay to apply?"],
+      "answer": "Yes. It's ₹1,000, or ₹500 for SC/ST and PwD applicants. It's non-refundable and can be paid by UPI, card or net banking."
+    },
+    {
+      "category": "Applying",
+      "question": "Can I apply offline?",
+      "variants": ["Can I submit a paper form?", "Is offline admission possible?", "Can I apply in person at the college?"],
+      "answer": "Yes. Paper forms are available at the admissions office (Block A, ground floor) on weekdays, 10 am to 4 pm. Applying online is quicker and lets you track your status."
+    },
+    {
+      "category": "Applying",
+      "question": "How do I check my application status?",
+      "variants": ["How can I track my application?", "Has my application been accepted?", "Where can I see my application status?"],
+      "answer": "Log in to the admissions portal with your application number and date of birth. You'll also get an email and SMS whenever your status changes."
+    },
+    {
+      "category": "Applying",
+      "question": "Can I edit my application after submitting it?",
+      "variants": ["I made a mistake in my application form", "How do I correct my application?", "Can I change details in the form?", "How do I edit my form?"],
+      "answer": "Yes, until the application deadline: log in and choose \"Edit application\". After the deadline, email admissions@ashwood.example with your application number and the correction."
+    },
+    {
+      "category": "Applying",
+      "question": "Is there an interview or group discussion?",
+      "variants": ["Is there a personal interview?", "Do I have to give a GD or PI?", "Is there an interview for admission?"],
+      "answer": "Only for the MBA. Shortlisted candidates are invited to a group discussion and personal interview in May. Undergraduate admission is based on entrance scores and Class 12 marks."
+    },
+    {
+      "category": "Eligibility",
+      "question": "What is the eligibility for B.Tech?",
+      "variants": ["Who can apply for B.Tech?", "What are the minimum marks for engineering?", "B.Tech eligibility criteria"],
+      "answer": "Class 12 with Physics, Chemistry and Maths, at least 60% aggregate (55% for reserved categories), and a valid JEE Main score."
+    },
+    {
+      "category": "Eligibility",
+      "question": "What is the eligibility for BCA?",
+      "variants": ["Who can apply for BCA?", "Minimum marks for BCA", "Can I do BCA without maths?"],
+      "answer": "Class 12 in any stream with Maths or Computer Science as a subject, and at least 50% aggregate."
+    },
+    {
+      "category": "Eligibility",
+      "question": "What is the eligibility for MBA?",
+      "variants": ["Who can apply for the MBA?", "MBA admission criteria", "Can final year students apply for MBA?"],
+      "answer": "A bachelor's degree in any subject with at least 50% marks, plus a valid CAT, MAT or CMAT score. Final-year students can apply and are admitted provisionally."
+    },
+    {
+      "category": "Eligibility",
+      "question": "Which entrance exams are accepted?",
+      "variants": ["Do I need an entrance exam?", "Is JEE required?", "Which entrance test should I take?"],
+      "answer": "B.Tech: JEE Main. MBA: CAT, MAT or CMAT. BCA, BBA and B.Sc don't need an entrance exam; admission is based on Class 12 marks."
+    },
+    {
+      "category": "Eligibility",
+      "question": "Is there reservation for SC, ST, OBC and EWS?",
+      "variants": ["What is the reservation policy?", "Are there category quota seats?", "Is there a quota for OBC students?"],
+      "answer": "Yes, seats are reserved as per government norms: 15% SC, 7.5% ST, 27% OBC (non-creamy layer) and 10% EWS, plus 5% for PwD applicants across all categories."
+    },
+    {
+      "category": "Eligibility",
+      "question": "Can I apply before my Class 12 results are out?",
+      "variants": ["My results are not declared yet", "I'm appearing for Class 12 this year", "Can I apply while awaiting results?"],
+      "answer": "Yes. Apply with your Class 10 marks now, then upload your Class 12 marksheet once results are out, before document verification."
+    },
+    {
+      "category": "Courses",
+      "question": "What courses do you offer?",
+      "variants": ["Which programmes are available?", "Give me the list of courses", "What can I study at the college?"],
+      "answer": "Undergraduate: B.Tech (Computer Science, AI & Data Science, Electronics, Mechanical), BCA, BBA and B.Sc (Physics, Maths, Computer Science).\nPostgraduate: MBA, M.Tech (Computer Science) and MCA."
+    },
+    {
+      "category": "Courses",
+      "question": "How long is each course?",
+      "variants": ["What is the course duration?", "How many years is B.Tech?", "How long does the MBA take?"],
+      "answer": "B.Tech: 4 years. BCA, BBA and B.Sc: 3 years. MBA, M.Tech and MCA: 2 years."
+    },
+    {
+      "category": "Courses",
+      "question": "How many seats are there?",
+      "variants": ["What is the seat intake?", "How many students are in each batch?", "Total number of seats"],
+      "answer": "B.Tech CSE 180, AI & Data Science 120, other B.Tech branches 60 each. BCA 120, BBA 120, B.Sc 60 per subject. MBA 120, M.Tech 30, MCA 60."
+    },
+    {
+      "category": "Courses",
+      "question": "Can I change my branch after the first year?",
+      "variants": ["Is branch change allowed?", "Can I switch from mechanical to computer science?", "How does branch sliding work?"],
+      "answer": "Yes, if there are free seats in the branch you want. Branch changes are decided by first-year CGPA, with a minimum of 8.0."
+    },
+    {
+      "category": "Courses",
+      "question": "Do you offer part-time or distance courses?",
+      "variants": ["Are there online courses?", "Is distance learning available?", "Do you have evening classes?"],
+      "answer": "No. All programmes are full-time and taught on campus."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "What is the fee for B.Tech?",
+      "variants": ["How much does B.Tech cost?", "B.Tech fee structure", "What is the engineering tuition fee?", "How much do I pay per year for B.Tech?"],
+      "answer": "₹1,40,000 a year in tuition, plus a one-time ₹15,000 admission fee and a ₹10,000 refundable caution deposit. Hostel and mess are charged separately."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "What is the fee for BCA, BBA and B.Sc?",
+      "variants": ["How much is the BCA fee?", "What does BBA cost?", "B.Sc fee per year"],
+      "answer": "Per year: BCA ₹80,000, BBA ₹75,000, B.Sc ₹50,000. There's also a one-time ₹15,000 admission fee."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "What is the fee for MBA?",
+      "variants": ["How much does the MBA cost?", "MBA fee structure", "What is the MBA tuition fee?"],
+      "answer": "₹2,20,000 a year plus the one-time ₹15,000 admission fee. This covers study material and the yearly industry visit."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "Can I pay the fees in instalments?",
+      "variants": ["Is there an EMI option for fees?", "Can I pay the fee in parts?", "Fee payment installments"],
+      "answer": "Yes. Each year's fee can be paid in two instalments, in July and December. Paying the full year up front gets you a 2% discount."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "Do you offer scholarships?",
+      "variants": ["Is there a merit scholarship?", "Can I get financial aid?", "Is there any fee concession?"],
+      "answer": "Yes:\n- 50% tuition waiver for 95% or more in Class 12, or a JEE percentile of 98+\n- 25% waiver for 90 to 95%\n- Need-based aid if your family income is under ₹3 lakh a year\nGovernment scholarships through the National Scholarship Portal are accepted too."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "What is the refund policy if I cancel my admission?",
+      "variants": ["Will I get my fee back if I withdraw?", "How do I cancel my admission?", "Fee refund rules"],
+      "answer": "Cancel before 15 August for a full refund minus ₹5,000 processing. After that: 90% back before classes start, 80% within 15 days of the start, 50% within 30 days, and nothing after that."
+    },
+    {
+      "category": "Fees & scholarships",
+      "question": "Can I get an education loan?",
+      "variants": ["Do you help with bank loans?", "How do I get a loan for the fees?", "Is an education loan available?"],
+      "answer": "The college doesn't lend money itself, but most banks offer education loans. The accounts office gives you the fee structure letter banks ask for within 2 working days."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "Is hostel available?",
+      "variants": ["Do you have a hostel?", "Is accommodation provided?", "Where will I stay?"],
+      "answer": "Yes. There are separate hostels for men and women on campus, with 2-sharing and 3-sharing rooms. First-year students get priority."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "What is the hostel fee?",
+      "variants": ["How much does the hostel cost?", "Hostel and mess charges", "What is the accommodation fee?", "Hostel fee per year"],
+      "answer": "₹90,000 a year for a 3-sharing room or ₹1,10,000 for 2-sharing. That includes mess (4 meals a day), Wi-Fi, laundry and electricity."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "Where is the college located?",
+      "variants": ["What is the college address?", "How do I reach the campus?", "Where is the campus?"],
+      "answer": "Ring Road, Sector 12, Ashwood. The nearest metro station is Ashwood Central, 1.5 km away, and college buses run from there every 20 minutes."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "Is there a college bus?",
+      "variants": ["Do you provide transport?", "Is there a bus facility?", "How much is the bus pass?"],
+      "answer": "Yes, college buses cover 18 routes across the city. A bus pass costs ₹18,000 a year."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "What facilities are on campus?",
+      "variants": ["Is there a library?", "Do you have sports facilities?", "Is there Wi-Fi on campus?"],
+      "answer": "A library open until 11 pm, Wi-Fi everywhere, labs for every department, a sports ground, gym and indoor courts, a medical room with a nurse 24/7, a cafeteria and an ATM."
+    },
+    {
+      "category": "Hostel & campus",
+      "question": "Is the campus safe? What about ragging?",
+      "variants": ["Is there ragging?", "Is there an anti-ragging committee?", "How is campus security?"],
+      "answer": "Ragging is strictly banned. There's an anti-ragging committee and a 24/7 helpline, and the campus has CCTV and security guards round the clock."
+    },
+    {
+      "category": "Documents",
+      "question": "What documents do I need for admission?",
+      "variants": ["List of documents required", "What should I bring for verification?", "Which certificates are needed?", "What documents should I bring?"],
+      "answer": "Bring:\n- Class 10 and 12 marksheets\n- Transfer certificate\n- Entrance exam scorecard (if your course needs one)\n- ID proof such as Aadhaar\n- 4 passport-size photos\n- Category certificate, if you're applying under a reserved category\n- Income certificate, for need-based scholarships"
+    },
+    {
+      "category": "Documents",
+      "question": "When is document verification?",
+      "variants": ["What is the document verification date?", "How does document verification work?", "Do I need original documents?"],
+      "answer": "Document verification is in the first week of July. Bring the originals and one set of self-attested photocopies."
+    },
+    {
+      "category": "Documents",
+      "question": "Can I submit some documents later?",
+      "variants": ["My documents are not ready yet", "I lost my marksheet", "What if a certificate is missing?"],
+      "answer": "Yes. You can take provisional admission and submit missing documents within 30 days of classes starting, along with an undertaking signed by a parent."
+    },
+    {
+      "category": "Dates",
+      "question": "When do applications open?",
+      "variants": ["When does admission start?", "What is the application start date?", "When can I start applying?"],
+      "answer": "Applications open on 1 February."
+    },
+    {
+      "category": "Dates",
+      "question": "What is the last date to apply?",
+      "variants": ["What is the application deadline?", "When do applications close?", "Last date for admission form"],
+      "answer": "Undergraduate courses: 31 May. MBA: 30 April. Late applications are accepted until 15 June with a ₹500 late fee, if seats are left."
+    },
+    {
+      "category": "Dates",
+      "question": "When will the merit list come out?",
+      "variants": ["When is the selection list published?", "When are admission results announced?", "Merit list date", "When will the results come out?"],
+      "answer": "The first merit list goes up on the portal on 10 June and the second on 20 June. You'll also get an email if you're selected."
+    },
+    {
+      "category": "Dates",
+      "question": "When do classes start?",
+      "variants": ["When does the session begin?", "What is the first day of college?", "When is orientation?", "When does college start?"],
+      "answer": "Orientation is on 1 August and classes begin on 4 August."
+    },
+    {
+      "category": "Placements",
+      "question": "How are the placements?",
+      "variants": ["What is the average package?", "What is the highest salary package?", "Do companies come for campus recruitment?"],
+      "answer": "In the 2025–26 season, 86% of eligible B.Tech students were placed. The average package was ₹6.8 LPA and the highest ₹24 LPA, with 120+ companies recruiting on campus."
+    },
+    {
+      "category": "Placements",
+      "question": "Do you help with internships?",
+      "variants": ["Is there a summer internship?", "Does the college arrange internships?", "Is an internship compulsory?"],
+      "answer": "Yes. The placement cell arranges summer internships after the 2nd and 3rd years, and every student does a 6-week internship before the final year."
+    },
+    {
+      "category": "Contact",
+      "question": "How do I contact the admissions office?",
+      "variants": ["What is the admissions phone number?", "What is the admissions email?", "Can I talk to someone about admission?"],
+      "answer": "Email admissions@ashwood.example or call +91 00000 00000 (demo number), Monday to Saturday, 9 am to 6 pm. You can also visit the admissions office in Block A."
+    },
+    {
+      "category": "Contact",
+      "question": "Can I visit the campus?",
+      "variants": ["Is there a campus tour?", "Can I come and see the college?", "How do I book a campus visit?", "Can I see the campus?"],
+      "answer": "Yes. Campus tours run Monday to Saturday at 11 am and 3 pm. Book a slot on the admissions portal, or just walk in."
+    },
+    {
+      "category": "Small talk",
+      "question": "Hello",
+      "variants": ["Hi", "Hey there", "Good morning", "Namaste"],
+      "answer": "Hi! Ask me anything about admissions at Ashwood: courses, fees, eligibility, hostel, documents or deadlines.",
+      "followups": ["How do I apply for admission?", "What courses do you offer?", "Do you offer scholarships?"]
+    },
+    {
+      "category": "Small talk",
+      "question": "Who are you?",
+      "variants": ["What can you do?", "Are you a bot?", "Help"],
+      "answer": "I'm the Ashwood College admissions assistant. I answer common questions about applying, courses, fees, scholarships, hostel, documents and placements. If I'm not sure what you mean, I'll suggest the closest questions I know.",
+      "followups": ["How do I apply for admission?", "What is the fee for B.Tech?", "Is hostel available?"]
+    },
+    {
+      "category": "Small talk",
+      "question": "Thank you",
+      "variants": ["Thanks", "Thanks a lot", "That was helpful"],
+      "answer": "You're welcome! Anything else you'd like to know?"
+    },
+    {
+      "category": "Small talk",
+      "question": "Goodbye",
+      "variants": ["Bye", "Bye bye", "That's all for now"],
+      "answer": "Good luck with your application! Come back any time."
+    }
+  ]
+}
