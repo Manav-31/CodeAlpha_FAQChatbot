@@ -120,6 +120,26 @@ def test_followups_come_from_the_same_category(bot):
     assert {categories[question] for question in reply.suggestions} == {"Hostel & campus"}
 
 
+def test_followups_skip_questions_already_asked(bot):
+    asked = ["Is hostel available?", "Is there a college bus?"]
+    reply = bot.reply("What is the hostel fee?", exclude=asked)
+    assert len(reply.suggestions) == 3
+    assert not set(reply.suggestions) & {*asked, "What is the hostel fee?"}
+
+
+def test_followups_fall_back_to_popular_when_a_topic_is_used_up(bot):
+    dates = bot.categories()["Dates"]
+    reply = bot.reply("When do classes start?", exclude=dates)
+    assert len(reply.suggestions) == 3
+    assert set(reply.suggestions) <= set(bot.popular)
+
+
+def test_did_you_mean_skips_questions_already_asked(bot):
+    reply = bot.reply("fees", exclude=["What is the hostel fee?"])
+    assert reply.answer == NOT_SURE_ANSWER
+    assert "What is the hostel fee?" not in reply.suggestions
+
+
 def test_browse_categories_leave_out_small_talk(bot):
     categories = bot.categories()
     assert SMALL_TALK not in categories

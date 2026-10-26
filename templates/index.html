@@ -4,50 +4,209 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Ashwood Admissions · Help desk</title>
+  <title>Admissions 2027–28 | Ashwood College</title>
   <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <h1 class="wordmark">ashwood<span>.</span></h1>
-        <span class="tagline">Admissions help desk</span>
-      </div>
-      <button id="new-chat" class="text-btn" type="button">New chat</button>
+  <div class="top-strip">
+    <div class="container">
+      <span>Admissions helpline: +91 00000 00000 (demo) | admissions@ashwood.example</span>
+      <span class="top-links"><a href="#contact">Contact</a><a href="#notices">Notices</a></span>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="logo" href="/">
+        <svg class="crest" viewBox="0 0 24 26" aria-hidden="true"><path d="M12 1 2 4.5v7.2C2 18 6.3 23 12 25c5.7-2 10-7 10-13.3V4.5z"/><text x="12" y="16.5" text-anchor="middle">A</text></svg>
+        <span class="logo-text"><strong>ASHWOOD COLLEGE</strong><small>Autonomous institution · Est. 1987 · Ashwood</small></span>
+      </a>
+      <button class="btn-apply" type="button" data-ask="How do I apply for admission?">Apply Online</button>
     </div>
   </header>
 
-  <main class="layout">
-    <aside class="topics" aria-label="Browse questions">
-      <h2>Browse questions</h2>
-      {% for category, questions in categories.items() %}
-      <details{% if loop.first %} open{% endif %}>
-        <summary>{{ category }}</summary>
-        <ul>
-          {% for question in questions %}
-          <li><button class="topic-question" type="button" data-question="{{ question }}">{{ question }}</button></li>
-          {% endfor %}
-        </ul>
-      </details>
-      {% endfor %}
-    </aside>
+  <nav class="main-nav" aria-label="Main">
+    <div class="container">
+      <a href="/">Home</a>
+      <a href="#programmes">Academics</a>
+      <a href="#overview" class="active" aria-current="page">Admissions</a>
+      <a href="#placements">Placements</a>
+      <a href="#hostel">Campus Life</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <section class="chat" aria-label="Chat">
-      <div id="messages" class="messages" aria-live="polite"></div>
-      <form id="chat-form" class="composer">
-        <input id="message-input" type="text" maxlength="300" autocomplete="off"
-               placeholder="Ask about admissions, fees, hostel..." aria-label="Your question" autofocus>
-        <button id="send-btn" class="send-btn" type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+  <div class="ticker">
+    <div class="container">
+      <span class="badge">NEW</span>
+      <span>Applications for 2027–28 open on 1 February 2027. Undergraduate applications close on 31 May, MBA on 30 April.</span>
+    </div>
+  </div>
 
-  <script id="bot-data" type="application/json">{{ {"college": college, "popular": popular}|tojson }}</script>
+  <div class="container page">
+    <p class="breadcrumb"><a href="/">Home</a> › Admissions</p>
+
+    <div class="page-grid">
+      <aside class="side">
+        <nav class="side-menu" aria-label="Admissions">
+          <h2>Admissions</h2>
+          <a href="#overview">Overview</a>
+          <a href="#dates">Important dates</a>
+          <a href="#programmes">Programmes</a>
+          <a href="#fees">Fee structure</a>
+          <a href="#hostel">Hostel</a>
+          <a href="#documents">Documents required</a>
+          <a href="#placements">Placements</a>
+          <a href="#contact">Admissions office</a>
+        </nav>
+
+        <section id="notices" class="notices">
+          <h2>Notices</h2>
+          <ul>
+            <li><time>20 Oct 2026</time><span>Prospectus for 2027–28 released.</span></li>
+            <li><time>15 Oct 2026</time><span>Campus tours run Monday to Saturday at 11 am and 3 pm.</span></li>
+            <li><time>01 Oct 2026</time><span>Scholarship rules for 2027–28 updated. <button class="text-link" type="button" data-ask="Do you offer scholarships?">Details</button></span></li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="content">
+        <section id="overview">
+          <h1>Admissions 2027–28</h1>
+          <p>Ashwood College admits students to undergraduate and postgraduate programmes every year. Applications are made online through the admissions portal; paper forms are also available at the admissions office.</p>
+          <p>B.Tech admission is through JEE Main and MBA admission through CAT, MAT or CMAT. BCA, BBA and B.Sc admissions are based on Class 12 marks. Questions about the process can be put to the admissions help desk using the chat button at the bottom right of this page.</p>
+        </section>
+
+        <section id="dates">
+          <h2>Important dates</h2>
+          <table>
+            <thead><tr><th scope="col">Event</th><th scope="col">Date</th></tr></thead>
+            <tbody>
+              <tr><td>Applications open</td><td>1 February</td></tr>
+              <tr><td>Last date for MBA applications</td><td>30 April</td></tr>
+              <tr><td>Last date for undergraduate applications</td><td>31 May</td></tr>
+              <tr><td>Late applications (₹500 late fee, if seats remain)</td><td>Until 15 June</td></tr>
+              <tr><td>First / second merit list</td><td>10 June / 20 June</td></tr>
+              <tr><td>Document verification</td><td>First week of July</td></tr>
+              <tr><td>Orientation / classes begin</td><td>1 August / 4 August</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="programmes">
+          <h2>Programmes offered</h2>
+          <table>
+            <thead><tr><th scope="col">Programme</th><th scope="col">Duration</th><th scope="col">Seats</th></tr></thead>
+            <tbody>
+              <tr><td>B.Tech Computer Science</td><td>4 years</td><td>180</td></tr>
+              <tr><td>B.Tech AI &amp; Data Science</td><td>4 years</td><td>120</td></tr>
+              <tr><td>B.Tech Electronics</td><td>4 years</td><td>60</td></tr>
+              <tr><td>B.Tech Mechanical</td><td>4 years</td><td>60</td></tr>
+              <tr><td>BCA</td><td>3 years</td><td>120</td></tr>
+              <tr><td>BBA</td><td>3 years</td><td>120</td></tr>
+              <tr><td>B.Sc (Physics, Maths, Computer Science)</td><td>3 years</td><td>60 each</td></tr>
+              <tr><td>MBA</td><td>2 years</td><td>120</td></tr>
+              <tr><td>M.Tech Computer Science</td><td>2 years</td><td>30</td></tr>
+              <tr><td>MCA</td><td>2 years</td><td>60</td></tr>
+            </tbody>
+          </table>
+          <p class="small">Eligibility: <button class="text-link" type="button" data-ask="What is the eligibility for B.Tech?">B.Tech</button> · <button class="text-link" type="button" data-ask="What is the eligibility for BCA?">BCA</button> · <button class="text-link" type="button" data-ask="What is the eligibility for MBA?">MBA</button></p>
+        </section>
+
+        <section id="fees">
+          <h2>Fee structure (per year)</h2>
+          <table>
+            <thead><tr><th scope="col">Programme</th><th scope="col" class="num">Tuition fee</th></tr></thead>
+            <tbody>
+              <tr><td>B.Tech (all branches)</td><td class="num">₹1,40,000</td></tr>
+              <tr><td>BCA</td><td class="num">₹80,000</td></tr>
+              <tr><td>BBA</td><td class="num">₹75,000</td></tr>
+              <tr><td>B.Sc</td><td class="num">₹50,000</td></tr>
+              <tr><td>MBA</td><td class="num">₹2,20,000</td></tr>
+            </tbody>
+          </table>
+          <p class="small">A one-time admission fee of ₹15,000 is payable by all students. Fees may be paid in two instalments (July and December). See also: <button class="text-link" type="button" data-ask="Do you offer scholarships?">scholarships</button>, <button class="text-link" type="button" data-ask="What is the refund policy if I cancel my admission?">refund policy</button>.</p>
+        </section>
+
+        <section id="hostel">
+          <h2>Hostel and transport</h2>
+          <p>Separate hostels for men and women are available on campus. First-year students are given priority.</p>
+          <table>
+            <thead><tr><th scope="col">Facility</th><th scope="col" class="num">Charges per year</th></tr></thead>
+            <tbody>
+              <tr><td>Hostel, 3-sharing room (incl. mess)</td><td class="num">₹90,000</td></tr>
+              <tr><td>Hostel, 2-sharing room (incl. mess)</td><td class="num">₹1,10,000</td></tr>
+              <tr><td>College bus pass</td><td class="num">₹18,000</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="documents">
+          <h2>Documents required</h2>
+          <ol>
+            <li>Class 10 and Class 12 marksheets</li>
+            <li>Transfer certificate</li>
+            <li>Entrance exam scorecard, where applicable</li>
+            <li>ID proof (Aadhaar or similar)</li>
+            <li>4 passport-size photographs</li>
+            <li>Category certificate, if applying under a reserved category</li>
+            <li>Income certificate, for need-based scholarships</li>
+          </ol>
+          <p class="small">Originals and one set of self-attested photocopies must be brought for verification.</p>
+        </section>
+
+        <section id="placements">
+          <h2>Placements 2025–26</h2>
+          <p>86% of eligible B.Tech students were placed. The average package was ₹6.8 LPA and the highest ₹24 LPA; over 120 companies recruited on campus. The placement cell also arranges <button class="text-link" type="button" data-ask="Do you help with internships?">internships</button>.</p>
+        </section>
+
+        <section id="contact" class="office">
+          <h2>Admissions office</h2>
+          <p>Block A, ground floor, Ashwood College, Ring Road, Sector 12, Ashwood<br>
+            Phone: +91 00000 00000 (demo) · Email: admissions@ashwood.example<br>
+            Monday to Saturday, 9 am to 6 pm</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Ashwood College, Ring Road, Sector 12, Ashwood</p>
+      <p>Ashwood College is a fictional college; all details on this page are made up for a demo.</p>
+    </div>
+  </footer>
+
+  <!-- Chat widget -->
+  <div id="chat-teaser" class="chat-teaser" hidden>
+    <button class="teaser-body" type="button" data-open-chat>Hi! Need help with admissions?</button>
+    <button id="teaser-close" class="teaser-close" type="button" aria-label="Dismiss">×</button>
+  </div>
+
+  <button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel" aria-label="Chat with the admissions help desk">
+    <svg class="icon-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+
+  <section id="chat-panel" class="chat-panel" role="dialog" aria-labelledby="chat-title">
+    <header class="chat-header">
+      <div class="chat-title">
+        <strong id="chat-title">Admissions Help Desk</strong>
+        <small><span class="online-dot"></span>Online</small>
+      </div>
+      <button id="chat-restart" class="header-btn" type="button" title="Start over">Restart</button>
+      <button id="chat-close" class="header-btn" type="button" aria-label="Close chat">×</button>
+    </header>
+    <div id="messages" class="messages" aria-live="polite"></div>
+    <form id="chat-form" class="composer">
+      <input id="message-input" type="text" maxlength="300" autocomplete="off"
+             placeholder="Type your question here" aria-label="Your question">
+      <button id="send-btn" class="send-btn" type="submit">Send</button>
+    </form>
+  </section>
+
+  <script id="bot-data" type="application/json">{{ {"college": college, "popular": popular, "categories": categories}|tojson }}</script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

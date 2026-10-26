@@ -13,6 +13,8 @@ from chatbot import FAQBot
 MAX_MESSAGE_CHARS = 300
 
 app = Flask(__name__)
+# Jinja's tojson sorts keys by default; keep FAQ topics in the order they appear in faqs.json.
+app.jinja_env.policies["json.dumps_kwargs"] = {"sort_keys": False}
 bot = FAQBot()
 
 
@@ -25,13 +27,16 @@ def index():
 def chat():
     payload = request.get_json(silent=True) or {}
     message = str(payload.get("message") or "").strip()
+    # Questions already answered in this chat, so they aren't suggested again.
+    asked = payload.get("asked")
+    asked = [question for question in asked if isinstance(question, str)] if isinstance(asked, list) else []
 
     if not message:
         return jsonify(error="Please type a question."), 400
     if len(message) > MAX_MESSAGE_CHARS:
         return jsonify(error=f"Please keep your question under {MAX_MESSAGE_CHARS} characters."), 400
 
-    return jsonify(asdict(bot.reply(message)))
+    return jsonify(asdict(bot.reply(message, exclude=asked)))
 
 
 if __name__ == "__main__":

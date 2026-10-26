@@ -1,6 +1,6 @@
 # Ashwood Admissions – FAQ Chatbot
 
-A chatbot that answers admission questions for **Ashwood College**, a fictional college made up for this project. Type a question in your own words and the bot finds the closest matching FAQ using NLP, then replies with its answer.
+A chatbot that answers admission questions for **Ashwood College**, a fictional college made up for this project. It runs as a help-desk chat widget on a mock admissions page of the college's website. Type a question in your own words and the bot finds the closest matching FAQ using NLP, then replies with its answer.
 
 Built for **CodeAlpha AI Internship – Task 2**.
 
@@ -12,9 +12,10 @@ Built for **CodeAlpha AI Internship – Task 2**.
 - Understands different wordings of the same question ("how much is hostel and mess" → *What is the hostel fee?*)
 - Shows which FAQ it matched and the similarity score
 - When it isn't sure, it says so and suggests the closest questions instead of guessing
-- Follow-up suggestions after every answer
-- A "Browse questions" sidebar listing every FAQ by topic
-- Clean, light chat interface that also works on phones
+- Follow-up suggestions after every answer, never repeating a question already asked in the chat
+- "Browse all topics" inside the chat lists every FAQ by topic (questions already asked are greyed out)
+- Links on the admissions page (Apply Online, eligibility, scholarships…) open the chat and ask that question
+- Works on phones, where the chat opens full screen
 
 ## How it works
 
@@ -88,7 +89,7 @@ pip install -r requirements-dev.txt
 pytest
 ```
 
-The 56 tests cover preprocessing, the TF-IDF maths, matching accuracy and the web API.
+The 61 tests cover preprocessing, the TF-IDF maths, matching accuracy, suggestions and the web API.
 
 ## Adding or changing FAQs
 
@@ -110,8 +111,8 @@ Edit `data/faqs.json`. Each entry looks like this:
 `POST /api/chat`
 
 ```json
-// Request
-{ "message": "how much is hostel and mess" }
+// Request ("asked" is optional: questions already answered in this chat, which won't be suggested again)
+{ "message": "how much is hostel and mess", "asked": ["Is hostel available?"] }
 
 // Response 200
 {
@@ -119,7 +120,7 @@ Edit `data/faqs.json`. Each entry looks like this:
   "matched_question": "What is the hostel fee?",
   "category": "Hostel & campus",
   "score": 0.64,
-  "suggestions": ["Is hostel available?", "Is there a college bus?", "Where is the college located?"]
+  "suggestions": ["Is there a college bus?", "Where is the college located?", "What facilities are on campus?"]
 }
 ```
 

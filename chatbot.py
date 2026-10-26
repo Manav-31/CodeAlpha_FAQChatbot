@@ -57,7 +57,9 @@ class FAQBot:
             best[owner] = max(best[owner], similarity)
         return best
 
-    def reply(self, message):
+    def reply(self, message, exclude=()):
+        """Answer `message`. Questions in `exclude` (already asked in this chat) are never suggested."""
+        exclude = set(exclude)
         scores = self.scores(message)
         ranked = sorted(range(len(self.faqs)), key=lambda i: -scores[i])
         # Without this, "recommend a good movie" would get "Hi!" back because of "good morning".
@@ -67,21 +69,28 @@ class FAQBot:
 
         if scores[top] >= MATCH_THRESHOLD:
             faq = self.faqs[top]
-            return Reply(faq["answer"], faq["question"], faq["category"], top_score, self._followups(top, scores))
+            followups = self._followups(top, scores, exclude | {faq["question"]})
+            return Reply(faq["answer"], faq["question"], faq["category"], top_score, followups)
 
         close = [self.faqs[i]["question"] for i in ranked
-                 if scores[i] >= SUGGEST_THRESHOLD and self.faqs[i]["category"] != SMALL_TALK][:3]
+                 if scores[i] >= SUGGEST_THRESHOLD and self.faqs[i]["category"] != SMALL_TALK
+                 and self.faqs[i]["question"] not in exclude][:3]
         if close:
             return Reply(NOT_SURE_ANSWER, score=top_score, suggestions=close)
-        return Reply(NO_MATCH_ANSWER, score=top_score, suggestions=self.popular)
+        return Reply(NO_MATCH_ANSWER, score=top_score,
+                     suggestions=[question for question in self.popular if question not in exclude])
 
-    def _followups(self, index, scores):
-        """Questions to suggest after answering FAQ `index`."""
+    def _followups(self, index, scores, exclude):
+        """Up to 3 questions to suggest after answering FAQ `index`, skipping any in `exclude`."""
         faq = self.faqs[index]
         if "followups" in faq:
-            return faq["followups"]
-        if faq["category"] == SMALL_TALK:
+            candidates = faq["followups"]
+        elif faq["category"] == SMALL_TALK:
             return []
-        related = [i for i, other in enumerate(self.faqs) if i != index and other["category"] == faq["category"]]
-        related.sort(key=lambda i: -scores[i])
-        return [self.faqs[i]["question"] for i in related[:3]]
+        else:
+            related = [i for i, other in enumerate(self.faqs) if other["category"] == faq["category"]]
+            related.sort(key=lambda i: -scores[i])
+            candidates = [self.faqs[i]["question"] for i in related]
+        # Once a topic's own questions have all been asked, fall back to the popular ones.
+        fresh = [question for question in dict.fromkeys([*candidates, *self.popular]) if question not in exclude]
+        return fresh[:3]
